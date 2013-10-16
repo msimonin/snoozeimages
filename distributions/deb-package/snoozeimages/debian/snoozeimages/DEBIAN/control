@@ -1,0 +1,9 @@
+Package: snoozeimages
+Version: 0.0.1-0
+Architecture: all
+Maintainer: Matthieu Simonin <matthieu.simonin@inria.fr>
+Installed-Size: 11736
+Section: misc
+Priority: optional
+Homepage: http://snooze.inria.fr
+Description: This is the image management system of the Snooze cloud manager.
