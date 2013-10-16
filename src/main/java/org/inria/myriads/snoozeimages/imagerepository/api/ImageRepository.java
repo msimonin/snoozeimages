@@ -2,7 +2,7 @@ package org.inria.myriads.snoozeimages.imagerepository.api;
 
 import java.util.ArrayList;
 
-import org.inria.myriads.snoozeimages.image.Image;
+import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
 
 /**
  * 
@@ -19,7 +19,7 @@ public interface ImageRepository
      * 
      * @return Images list.
      */
-     ArrayList<Image> getImagesList();
+     ArrayList<VirtualMachineImage> getImagesList();
      
      
      /**
@@ -29,6 +29,6 @@ public interface ImageRepository
       * @param imageIdentifier      the image identifier.
       * @return the image or null.
       */
-    Image getImage(String imageIdentifier);
+    VirtualMachineImage getImage(String imageIdentifier);
      
 }

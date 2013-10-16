@@ -2,8 +2,8 @@ package org.inria.myriads.snoozeimages.imagerepository.api.impl;
 
 import java.util.ArrayList;
 
-import org.inria.myriads.snoozeimages.image.Image;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
+import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
 import org.libvirt.Connect;
 import org.libvirt.LibvirtException;
@@ -53,16 +53,16 @@ public class LibvirtRepository implements ImageRepository
     }
 
     @Override
-    public ArrayList<Image> getImagesList() 
+    public ArrayList<VirtualMachineImage> getImagesList() 
     {
-        ArrayList<Image> images = new ArrayList<Image>();
+        ArrayList<VirtualMachineImage> images = new ArrayList<VirtualMachineImage>();
         try
         {
             for (String volume : storage_.listVolumes())
             {
                 try
                 {
-                    Image image = toImage(storage_.storageVolLookupByName(volume));
+                    VirtualMachineImage image = toImage(storage_.storageVolLookupByName(volume));
                     images.add(image);
                 }
                 catch (LibvirtException exception)
@@ -92,9 +92,9 @@ public class LibvirtRepository implements ImageRepository
      * @return  the image
      * @throws LibvirtException libvirt exceotion.
      */
-    private Image toImage(StorageVol volume) throws LibvirtException
+    private VirtualMachineImage toImage(StorageVol volume) throws LibvirtException
     {
-        Image image = new Image();
+        VirtualMachineImage image = new VirtualMachineImage();
         image.setName(volume.getName());
         image.setPath(volume.getPath());
         image.setFormat(volumeParser_.getFormatType(volume.getXMLDesc(0)));
@@ -102,9 +102,9 @@ public class LibvirtRepository implements ImageRepository
     }
 
     @Override
-    public Image getImage(String imageIdentifier) 
+    public VirtualMachineImage getImage(String imageIdentifier) 
     {
-        Image image = null;
+        VirtualMachineImage image = null;
         try 
         {
             StorageVol volume = storage_.storageVolLookupByName(imageIdentifier);

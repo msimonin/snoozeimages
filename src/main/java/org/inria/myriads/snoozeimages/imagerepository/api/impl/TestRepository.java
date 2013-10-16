@@ -2,8 +2,8 @@ package org.inria.myriads.snoozeimages.imagerepository.api.impl;
 
 import java.util.ArrayList;
 
-import org.inria.myriads.snoozeimages.image.Image;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
+import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
 
 /**
  * 
@@ -16,12 +16,12 @@ public class TestRepository implements ImageRepository
 {
 
     @Override
-    public ArrayList<Image> getImagesList() 
+    public ArrayList<VirtualMachineImage> getImagesList() 
     {
-       ArrayList<Image> images = new ArrayList<Image>();
-       Image image = new Image();
+       ArrayList<VirtualMachineImage> images = new ArrayList<VirtualMachineImage>();
+       VirtualMachineImage image = new VirtualMachineImage();
        image.setName("image1");
-       Image image2 = new Image();
+       VirtualMachineImage image2 = new VirtualMachineImage();
        image2.setName("image2");
        images.add(image);
        images.add(image2);
@@ -29,7 +29,7 @@ public class TestRepository implements ImageRepository
     }
 
     @Override
-    public Image getImage(String imageIdentifier) {
+    public VirtualMachineImage getImage(String imageIdentifier) {
         // TODO Auto-generated method stub
         return null;
     }
