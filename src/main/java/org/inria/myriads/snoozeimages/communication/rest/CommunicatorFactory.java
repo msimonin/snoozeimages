@@ -21,7 +21,9 @@ package org.inria.myriads.snoozeimages.communication.rest;
 
 import org.inria.myriads.snoozecommon.communication.NetworkAddress;
 import org.inria.myriads.snoozeimages.communication.rest.api.ImageRepositoryAPI;
+import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
 import org.inria.myriads.snoozeimages.communication.rest.api.impl.RESTletImageRepositoryCommunicator;
+import org.inria.myriads.snoozeimages.communication.rest.api.impl.RESTletImagesRepositoryCommunicator;
 
 
 /**
@@ -38,14 +40,25 @@ public final class CommunicatorFactory
     }
     
     /**
-     * Creates a new bootstrap communicator instance.
+     * Creates a new images communicator instance.
      * 
      * @param bootstrapAddress     The bootstrap address
      * @return                     The bootstrap communicator instance
      */
-    public static ImageRepositoryAPI newImageRepositoryCommunicator(NetworkAddress address) 
+    public static ImagesRepositoryAPI newImagesRepositoryCommunicator(NetworkAddress address) 
     {
-        return new RESTletImageRepositoryCommunicator(address);
+        return new RESTletImagesRepositoryCommunicator(address);
+    }
+    
+    /**
+     * Creates a new image communicator instance.
+     * 
+     * @param bootstrapAddress     The bootstrap address
+     * @return                     The bootstrap communicator instance
+     */
+    public static ImageRepositoryAPI newImageRepositoryCommunicator(NetworkAddress address, String imageIdentifier) 
+    {
+        return new RESTletImageRepositoryCommunicator(address, imageIdentifier);
     }
  
 }

@@ -43,6 +43,7 @@ public class LibvirtRepository implements ImageRepository
         {
         connect_ = new Connect("qemu+tcp://localhost:16509/system");
         storage_ = connect_.storagePoolLookupByName("default");
+        storage_.refresh(0);
         volumeParser_ = new LibvirtVolumeParser();
         }
         catch (Exception e)
@@ -55,9 +56,11 @@ public class LibvirtRepository implements ImageRepository
     @Override
     public ArrayList<VirtualMachineImage> getImagesList() 
     {
+        
         ArrayList<VirtualMachineImage> images = new ArrayList<VirtualMachineImage>();
         try
         {
+            storage_.refresh(0);
             for (String volume : storage_.listVolumes())
             {
                 try
@@ -107,6 +110,7 @@ public class LibvirtRepository implements ImageRepository
         VirtualMachineImage image = null;
         try 
         {
+            storage_.refresh(0);
             StorageVol volume = storage_.storageVolLookupByName(imageIdentifier);
             image = toImage(volume);
         }

@@ -6,17 +6,18 @@ import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 
-public interface ImageRepositoryAPI
+public interface ImagesRepositoryAPI
 {
-
     /**
      * 
-     * Gets an image detail.
+     * Gets the list of image in the repository.
      * 
-     * 
-     * @return Image.
+     * @return Image list.
      */
     @Get
-    public VirtualMachineImage getImage();
+    public ArrayList<VirtualMachineImage> getImagesList();
+    
+    
+
     
 }

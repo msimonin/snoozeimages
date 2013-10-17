@@ -30,7 +30,7 @@
 	</appender>	
 	
 	<appender name="FA" class="org.apache.log4j.FileAppender">
-    		<param name="file" value="/tmp/snooze_node.log"/>
+    		<param name="file" value="/tmp/snoozeimages.log"/>
     		<param name="Threshold" value="DEBUG"/> 	
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="[%-5p] |%d{MMM dd HH:mm:ss}| [%t] %c{2} %x - %m%n" />

@@ -1,6 +1,7 @@
 package org.inria.myriads.snoozeimages.application;
 
-import org.inria.myriads.snoozeimages.resource.ImageServiceResource;
+import org.inria.myriads.snoozeimages.resource.ImageResource;
+import org.inria.myriads.snoozeimages.resource.ImagesResource;
 import org.restlet.Application;
 import org.restlet.Context;
 import org.restlet.Restlet;
@@ -35,7 +36,8 @@ public class ImageServiceApplication extends Application
     public Restlet createInboundRoot() 
     {  
          Router router = new Router(getContext());  
-         router.attach("/images", ImageServiceResource.class); 
+         router.attach("/images", ImagesResource.class);
+         router.attach("/images/{imageIdentifier}", ImageResource.class);
          return router;  
     }
 
