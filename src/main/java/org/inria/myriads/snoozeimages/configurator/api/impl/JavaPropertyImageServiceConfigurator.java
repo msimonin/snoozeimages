@@ -125,12 +125,21 @@ public final class JavaPropertyImageServiceConfigurator
     private void setImageServiceSettings() 
             throws ImageServiceConfiguratorException, UnknownHostException 
     {
-        ImageRepositorySettings imageServiceSettings = new ImageRepositorySettings();
+        ImageRepositorySettings imageServiceSettings = imageServiceConfiguration_.getImageRepositorySettings();
         String type = properties_.getProperty("repository.type");
-        imageServiceSettings.setType(ImageRepositoryType.valueOf("libvirt"));
+        imageServiceSettings.setType(ImageRepositoryType.valueOf(type));
         
-        String libvirtListenPort = properties_.getProperty("repository.libvirt.port");
-        //imageServiceSettings.getLibvirtSettings().setPort(Integer.valueOf(libvirtListenPort));
+        String libvirtPort = properties_.getProperty("repository.libvirt.port");
+        imageServiceSettings.getLibvirtSettings().setPort(Integer.valueOf(libvirtPort));
+        String libvirtAddress = properties_.getProperty("repository.libvirt.address");
+        imageServiceSettings.getLibvirtSettings().setAddress(libvirtAddress);
+        String libvirtHypervisor = properties_.getProperty("repository.libvirt.hypervisor");
+        imageServiceSettings.getLibvirtSettings().setHypervisor(libvirtHypervisor);
+        String libvirtTransport = properties_.getProperty("repository.libvirt.transport");
+        imageServiceSettings.getLibvirtSettings().setTransport(libvirtTransport);
+        String libvirtPool = properties_.getProperty("repository.libvirt.pool");
+        imageServiceSettings.getLibvirtSettings().setPool(libvirtPool);
+        
     }
     
     /**

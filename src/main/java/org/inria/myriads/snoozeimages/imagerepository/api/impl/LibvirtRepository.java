@@ -2,6 +2,7 @@ package org.inria.myriads.snoozeimages.imagerepository.api.impl;
 
 import java.util.ArrayList;
 
+import org.inria.myriads.snoozeimages.configurator.repositorysettings.LibvirtSettings;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
 import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
@@ -35,14 +36,18 @@ public class LibvirtRepository implements ImageRepository
     
     /**
      * Constructor.
+     * @param libvirtSettings 
      */
-    public LibvirtRepository() 
+    public LibvirtRepository(LibvirtSettings libvirtSettings) 
     {
         log_.debug("Connection to the libvirt driver in progress");
         try
         {
-        connect_ = new Connect("qemu+tcp://localhost:16509/system");
-        storage_ = connect_.storagePoolLookupByName("default");
+        String connection = createConnection(libvirtSettings);   
+        connect_ = new Connect(connection);
+        String storagePool = libvirtSettings.getPool();
+        log_.debug("Storage pool : " + storagePool);
+        storage_ = connect_.storagePoolLookupByName(storagePool);
         storage_.refresh(0);
         volumeParser_ = new LibvirtVolumeParser();
         }
@@ -51,6 +56,17 @@ public class LibvirtRepository implements ImageRepository
             e.printStackTrace();
         }
         log_.debug("Connection to th libvirt driver established");
+    }
+
+    private String createConnection(LibvirtSettings libvirtSettings)
+    {
+        String hypervisor = libvirtSettings.getHypervisor();
+        String transport = libvirtSettings.getTransport();
+        String address = libvirtSettings.getAddress();
+        String port = String.valueOf(libvirtSettings.getPort());
+        String connection = hypervisor + "+" + transport + "://" + address + ":" + port + "/system";
+        log_.debug("connection to" + connection);
+        return connection;
     }
 
     @Override

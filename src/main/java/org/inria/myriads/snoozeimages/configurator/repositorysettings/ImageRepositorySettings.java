@@ -23,6 +23,7 @@ public class ImageRepositorySettings
      */
     public ImageRepositorySettings()
     {
+        libvirtSettings_ = new LibvirtSettings();
     }
 
     /**
