@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.inria.myriads.snoozecommon.communication.NetworkAddress;
 import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
-import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.inria.myriads.snoozeimages.configurator.repositorysettings.LibvirtSettings;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
-import org.inria.myriads.snoozeimages.virtualmachineimage.VirtualMachineImage;
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
 import org.libvirt.Connect;
 import org.libvirt.LibvirtException;
@@ -117,6 +117,8 @@ public class LibvirtRepository implements ImageRepository
         image.setName(volume.getName());
         image.setPath(volume.getPath());
         image.setFormat(volumeParser_.getFormatType(volume.getXMLDesc(0)));
+        image.setAllocation(volume.getInfo().allocation);
+        image.setCapacity(volume.getInfo().capacity);
         return image;
     }
 
