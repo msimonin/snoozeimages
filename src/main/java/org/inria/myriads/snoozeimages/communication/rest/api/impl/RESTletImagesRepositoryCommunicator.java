@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.inria.myriads.snoozecommon.communication.NetworkAddress;
 import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
@@ -47,7 +48,7 @@ public class RESTletImagesRepositoryCommunicator implements ImagesRepositoryAPI
 
 
     @Override
-    public ArrayList<VirtualMachineImage> getImagesList()
+    public VirtualMachineImageList getImagesList()
     {
         log_.debug("Sending to the image repository a images list request");
         ClientResource clientResource = null;
@@ -56,7 +57,7 @@ public class RESTletImagesRepositoryCommunicator implements ImagesRepositoryAPI
         {
             clientResource = createClientResource();
             ImagesRepositoryAPI imageRepository = clientResource.wrap(ImagesRepositoryAPI.class); 
-            ArrayList<VirtualMachineImage> images = imageRepository.getImagesList();
+            VirtualMachineImageList images = imageRepository.getImagesList();
             return images;
         } 
         catch (Exception exception)

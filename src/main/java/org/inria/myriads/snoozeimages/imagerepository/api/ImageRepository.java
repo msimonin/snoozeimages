@@ -3,6 +3,7 @@ package org.inria.myriads.snoozeimages.imagerepository.api;
 import java.util.ArrayList;
 
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
 
 /**
  * 
@@ -19,7 +20,7 @@ public interface ImageRepository
      * 
      * @return Images list.
      */
-     ArrayList<VirtualMachineImage> getImagesList();
+     VirtualMachineImageList getImagesList();
      
      
      /**

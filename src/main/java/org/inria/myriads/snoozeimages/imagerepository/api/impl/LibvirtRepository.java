@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.inria.myriads.snoozeimages.configurator.repositorysettings.LibvirtSettings;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
 import org.libvirt.Connect;
 import org.libvirt.LibvirtException;
@@ -70,10 +71,11 @@ public class LibvirtRepository implements ImageRepository
     }
 
     @Override
-    public ArrayList<VirtualMachineImage> getImagesList() 
-    {
+    public VirtualMachineImageList getImagesList() 
+    {        
+        VirtualMachineImageList imageList = new VirtualMachineImageList();
+        ArrayList<VirtualMachineImage> images = imageList.getImages();
         
-        ArrayList<VirtualMachineImage> images = new ArrayList<VirtualMachineImage>();
         try
         {
             storage_.refresh(0);
@@ -90,7 +92,6 @@ public class LibvirtRepository implements ImageRepository
                     log_.debug(exception.getMessage());
                     continue;
                 }
-                
             }
         }
         catch (LibvirtException exception)
@@ -98,7 +99,7 @@ public class LibvirtRepository implements ImageRepository
             log_.error("Unable to retrive the volume list from the storage pool");
             log_.debug(exception.getMessage());
         }
-       return images;
+       return imageList;
        
     }
 
