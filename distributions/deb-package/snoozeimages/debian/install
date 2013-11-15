@@ -1,0 +1,4 @@
+debian/input/init.d/snoozeimages /etc/init.d
+debian/input/snoozeimages.jar /usr/share/snoozeimages
+debian/input/configs/log4j.xml /usr/share/snoozeimages/configs
+debian/input/configs/snooze_images.cfg /usr/share/snoozeimages/configs

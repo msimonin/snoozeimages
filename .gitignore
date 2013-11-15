@@ -1,4 +1,7 @@
+target
 *.class
+*.zip
+*.deb
 
 # Package Files #
 *.jar

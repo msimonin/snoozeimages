@@ -1,0 +1,12 @@
+Source: snoozeimages
+Section: misc
+Priority: optional
+Maintainer: Matthieu Simonin <matthieu.simonin@inria.fr> 
+Standards-Version: 3.8.0
+Build-Depends: debhelper (>= 5) 
+
+Homepage: http://snooze.inria.fr
+Package: snoozeimages
+Architecture: all
+Depends:
+Description: This is the image management system of the Snooze cloud manager.
