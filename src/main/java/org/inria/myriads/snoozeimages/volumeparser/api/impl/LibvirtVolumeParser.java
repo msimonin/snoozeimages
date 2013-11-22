@@ -8,11 +8,17 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import org.inria.myriads.libvirt.volume.LibvirtConfigVolume;
-import org.inria.myriads.snoozeimages.imagerepository.api.impl.LibvirtRepository;
 import org.inria.myriads.snoozeimages.volumeparser.api.VolumeParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * Libvirt Volume Parser.
+ * 
+ * @author msimonin
+ *
+ */
 public class LibvirtVolumeParser implements VolumeParser 
 {
     /** Define the logger. */

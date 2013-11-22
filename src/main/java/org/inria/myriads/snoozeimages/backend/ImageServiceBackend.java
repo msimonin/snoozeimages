@@ -4,7 +4,6 @@ import org.inria.myriads.snoozeimages.configurator.api.ImageServiceConfiguration
 import org.inria.myriads.snoozeimages.configurator.repositorysettings.ImageRepositorySettings;
 import org.inria.myriads.snoozeimages.imagerepository.ImageRepositoryFactory;
 import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
-import org.inria.myriads.snoozeimages.imagerepository.api.impl.LibvirtRepository;
 
 /**
  * 

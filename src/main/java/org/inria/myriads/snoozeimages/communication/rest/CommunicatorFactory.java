@@ -42,8 +42,8 @@ public final class CommunicatorFactory
     /**
      * Creates a new images communicator instance.
      * 
-     * @param bootstrapAddress     The bootstrap address
-     * @return                     The bootstrap communicator instance
+     * @param address   The images repository address
+     * @return          The images repository communicator instance.
      */
     public static ImagesRepositoryAPI newImagesRepositoryCommunicator(NetworkAddress address) 
     {
@@ -53,8 +53,9 @@ public final class CommunicatorFactory
     /**
      * Creates a new image communicator instance.
      * 
-     * @param bootstrapAddress     The bootstrap address
-     * @return                     The bootstrap communicator instance
+     * @param address           The image repository address.
+     * @param imageIdentifier   The image identifier.
+     * @return  The image communicator instance.                  
      */
     public static ImageRepositoryAPI newImageRepositoryCommunicator(NetworkAddress address, String imageIdentifier) 
     {

@@ -1,12 +1,15 @@
 package org.inria.myriads.snoozeimages.communication.rest.api;
 
-import java.util.ArrayList;
-
-import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
 import org.restlet.resource.Get;
-import org.restlet.resource.Post;
 
+/**
+ * 
+ * Images Reposirory API.
+ * 
+ * @author msimonin
+ *
+ */
 public interface ImagesRepositoryAPI
 {
     /**
@@ -16,6 +19,6 @@ public interface ImagesRepositoryAPI
      * @return Image list.
      */
     @Get
-    public VirtualMachineImageList getImagesList();
+    VirtualMachineImageList getImagesList();
     
 }

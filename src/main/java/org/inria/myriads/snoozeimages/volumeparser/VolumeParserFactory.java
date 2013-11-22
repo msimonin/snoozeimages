@@ -1,12 +1,18 @@
 package org.inria.myriads.snoozeimages.volumeparser;
 
-import javax.xml.bind.JAXBException;
 
 import org.inria.myriads.snoozeimages.configurator.repositorysettings.ImageRepositorySettings;
 import org.inria.myriads.snoozeimages.volumeparser.api.VolumeParser;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
 
-public class VolumeParserFactory 
+/**
+ * 
+ * Volume parser factory.
+ * 
+ * @author msimonin
+ *
+ */
+public final class VolumeParserFactory 
 {
     /**
      * Hide Constructor.
@@ -21,9 +27,9 @@ public class VolumeParserFactory
      * 
      * Creates a new Image Repository.
      * 
-     * @param settings  The settings
-     * @return  the image repository
-     * @throws JAXBException 
+     * @param settings  The image repository settings
+     * @return  volume parser.
+     * @throws Exception   
      */
     public VolumeParser newVolumeParser(ImageRepositorySettings settings) throws Exception
     {

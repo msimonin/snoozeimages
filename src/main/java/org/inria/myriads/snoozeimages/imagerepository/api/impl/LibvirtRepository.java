@@ -2,10 +2,10 @@ package org.inria.myriads.snoozeimages.imagerepository.api.impl;
 
 import java.util.ArrayList;
 
-import org.inria.myriads.snoozeimages.configurator.repositorysettings.LibvirtSettings;
-import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
+import org.inria.myriads.snoozeimages.configurator.repositorysettings.LibvirtSettings;
+import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
 import org.inria.myriads.snoozeimages.volumeparser.api.impl.LibvirtVolumeParser;
 import org.libvirt.Connect;
 import org.libvirt.LibvirtException;
@@ -33,6 +33,7 @@ public class LibvirtRepository implements ImageRepository
     /** The storage pool.*/
     private StoragePool storage_;
 
+    /** libvirt volume parser.*/
     private LibvirtVolumeParser volumeParser_; 
     
     /**
@@ -59,6 +60,13 @@ public class LibvirtRepository implements ImageRepository
         log_.debug("Connection to th libvirt driver established");
     }
 
+    /**
+     * 
+     * Create connection.
+     * 
+     * @param libvirtSettings   The libvirt settings.
+     * @return The connection String.
+     */
     private String createConnection(LibvirtSettings libvirtSettings)
     {
         String hypervisor = libvirtSettings.getHypervisor();
@@ -133,7 +141,7 @@ public class LibvirtRepository implements ImageRepository
             StorageVol volume = storage_.storageVolLookupByName(imageIdentifier);
             image = toImage(volume);
         }
-        catch(Exception exception)
+        catch (Exception exception)
         {
             exception.printStackTrace();
         }
