@@ -1,18 +1,20 @@
 package org.inria.myriads.snoozeimages.communication.rest.api.impl;
 
 
-import java.util.ArrayList;
-
 import org.inria.myriads.snoozecommon.communication.NetworkAddress;
-import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
-import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
+import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
 import org.restlet.resource.ClientResource;
-import org.restlet.resource.Get;
-import org.restlet.resource.Post;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ * RESTlet images repository communicator.
+ * 
+ * @author msimonin
+ *
+ */
 public class RESTletImagesRepositoryCommunicator implements ImagesRepositoryAPI
 {
     /** Define the logger. */
@@ -24,9 +26,9 @@ public class RESTletImagesRepositoryCommunicator implements ImagesRepositoryAPI
     /**
      * Constructor.
      * 
-     * @param groupManagerAddress  The  group manager address
+     * @param address  The image repository address.
      */
-    public RESTletImagesRepositoryCommunicator(NetworkAddress address) 
+    public RESTletImagesRepositoryCommunicator(NetworkAddress address)
     {
         log_.debug("Initializing REST image repository communicator");
         address_ = address;

@@ -1,12 +1,8 @@
 package org.inria.myriads.snoozeimages.resource;
 
-import java.util.ArrayList;
-
+import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
 import org.inria.myriads.snoozeimages.backend.ImageServiceBackend;
 import org.inria.myriads.snoozeimages.communication.rest.api.ImagesRepositoryAPI;
-import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
-import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
-import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

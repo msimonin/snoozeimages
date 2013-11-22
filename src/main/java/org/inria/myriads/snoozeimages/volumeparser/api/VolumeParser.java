@@ -1,10 +1,18 @@
 package org.inria.myriads.snoozeimages.volumeparser.api;
 
+/**
+ * 
+ * Volume Parser API.
+ * 
+ * @author msimonin
+ *
+ */
 public interface VolumeParser 
 {
+    
     /**
      * 
-     * Gets the name from the description
+     * Gets the name from the description.
      * 
      * @param xmlDescription    the xml description.
      * @return  the name
@@ -23,7 +31,7 @@ public interface VolumeParser
     
     /**
      * 
-     * Gets the format
+     * Gets the format.
      * 
      * @param xmlDescription    the xml description.
      * @return  the format

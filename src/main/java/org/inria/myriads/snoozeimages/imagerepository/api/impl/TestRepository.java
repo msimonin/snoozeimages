@@ -2,9 +2,10 @@ package org.inria.myriads.snoozeimages.imagerepository.api.impl;
 
 import java.util.ArrayList;
 
-import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImage;
 import org.inria.myriads.snoozecommon.virtualmachineimage.VirtualMachineImageList;
+import org.inria.myriads.snoozeimages.imagerepository.api.ImageRepository;
+
 
 /**
  * 
@@ -31,8 +32,8 @@ public class TestRepository implements ImageRepository
     }
 
     @Override
-    public VirtualMachineImage getImage(String imageIdentifier) {
-        // TODO Auto-generated method stub
+    public VirtualMachineImage getImage(String imageIdentifier) 
+    {
         return null;
     }
 
