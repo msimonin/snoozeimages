@@ -29,5 +29,15 @@ public interface ImageRepository
       * @return the image or null.
       */
     VirtualMachineImage getImage(String imageIdentifier);
+
+
+    /**
+     * 
+     * Deletes the images.
+     * 
+     * @param imageIdentifier   the image identifier
+     * @return  true iff everything is fine.
+     */
+    boolean deleteImage(String imageIdentifier);
      
 }
