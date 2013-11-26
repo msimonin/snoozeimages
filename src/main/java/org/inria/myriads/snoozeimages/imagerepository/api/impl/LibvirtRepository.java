@@ -148,4 +148,21 @@ public class LibvirtRepository implements ImageRepository
         return image;
     }
 
+    @Override
+    public boolean deleteImage(String imageIdentifier)
+    {
+        try 
+        {
+            storage_.refresh(0);
+            StorageVol volume = storage_.storageVolLookupByName(imageIdentifier);
+            volume.delete(0);
+        }
+        catch (Exception exception)
+        {
+            exception.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
 }

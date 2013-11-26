@@ -81,4 +81,31 @@ public class RESTletImageRepositoryCommunicator implements ImageRepositoryAPI
         }
         return null;
     }
+
+    @Override
+    public boolean deleteImage()
+    {
+        log_.debug("Sending to the image repository a image detail request");
+        ClientResource clientResource = null;
+        
+        try 
+        {
+            clientResource = createClientResource();
+            ImageRepositoryAPI imageRepository = clientResource.wrap(ImageRepositoryAPI.class); 
+            boolean isDeleted = imageRepository.deleteImage();
+            return isDeleted;
+        } 
+        catch (Exception exception)
+        {
+            log_.debug("Error while removing the image");
+        }
+        finally
+        {
+            if (clientResource != null)
+            {
+                clientResource.release();
+            }
+        }
+        return false;
+    }
 }

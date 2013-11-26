@@ -48,5 +48,22 @@ public class ImageResource extends ServerResource implements ImageRepositoryAPI
         }
         return image;
     }
+
+    @Override
+    public boolean deleteImage()
+    {
+        boolean isDeleted = false;
+        try
+        {
+            String imageIdentifier = (String) this.getRequest().getAttributes().get("imageIdentifier");
+            log_.debug(String.format("Received an image delete request for id %s", imageIdentifier));
+            isDeleted = backend_.getRepository().deleteImage(imageIdentifier);
+        }
+        catch (Exception e)
+        {
+            log_.error("Unable to delete the image");
+        }
+        return isDeleted;
+    }
     
 }
