@@ -9,6 +9,8 @@ This is the snooze images system service. It exposes a RESTful API to deal with 
 
 `GET /images/[id]` : Gets the information of the image with given identifier.
 
+`DELETE /images/[id]`: Delete the specified image.
+
 
 ## Image Repository backend
 
