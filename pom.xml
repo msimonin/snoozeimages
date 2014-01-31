@@ -37,7 +37,7 @@
 		</repository>
 		
 		<repository>
-	      <id>sno1ze repo</id>
+	      <id>snooze repo</id>
 	      <name>snooze repo</name>
 	      <url>http://snooze.inria.fr/maven/snapshots</url>
 	  </repository>
