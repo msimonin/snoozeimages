@@ -20,7 +20,7 @@
 #
 
 SNOOZE_PACKAGE_NAME="snoozeimages"
-SNOOZE_JAR_NAME="uber-snoozeimages-2.2.0-SNAPSHOT.jar"
+SNOOZE_JAR_NAME="uber-snoozeimages-3.0.0-SNAPSHOT.jar"
 
 # Update config files
 cp -R ../../configs/snooze_images.cfg $SNOOZE_PACKAGE_NAME/debian/input/configs/
