@@ -61,8 +61,8 @@ public final class JavaPropertyImageServiceConfigurator
      * Initialize parameters.
      *  
      * @param configurationFile             The configuration file
-     * @throws ImageServiceConfiguratorException 
-     * @throws IOException 
+     * @throws ImageServiceConfiguratorException  exception 
+     * @throws IOException exception
      */
     public JavaPropertyImageServiceConfigurator(String configurationFile) 
         throws ImageServiceConfiguratorException, IOException
