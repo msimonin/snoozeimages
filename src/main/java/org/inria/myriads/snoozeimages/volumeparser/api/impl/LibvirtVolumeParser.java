@@ -32,7 +32,7 @@ public class LibvirtVolumeParser implements VolumeParser
 
     /**
      * Constructor. 
-     * @throws JAXBException 
+     * @throws JAXBException exception. 
      */
     public LibvirtVolumeParser() throws JAXBException
     {

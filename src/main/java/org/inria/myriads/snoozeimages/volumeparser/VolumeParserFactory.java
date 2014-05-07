@@ -29,7 +29,7 @@ public final class VolumeParserFactory
      * 
      * @param settings  The image repository settings
      * @return  volume parser.
-     * @throws Exception   
+     * @throws Exception exception/   
      */
     public VolumeParser newVolumeParser(ImageRepositorySettings settings) throws Exception
     {

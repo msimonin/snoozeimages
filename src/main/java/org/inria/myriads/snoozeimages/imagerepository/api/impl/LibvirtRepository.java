@@ -38,7 +38,7 @@ public class LibvirtRepository implements ImageRepository
     
     /**
      * Constructor.
-     * @param libvirtSettings 
+     * @param libvirtSettings libvirt settings. 
      */
     public LibvirtRepository(LibvirtSettings libvirtSettings) 
     {
