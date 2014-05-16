@@ -73,7 +73,20 @@ public class LibvirtRepository implements ImageRepository
         String transport = libvirtSettings.getTransport();
         String address = libvirtSettings.getAddress();
         String port = String.valueOf(libvirtSettings.getPort());
-        String connection = hypervisor + "+" + transport + "://" + address + ":" + port + "/system";
+        String connection = "";
+        if (hypervisor.equals("test"))
+        {
+        	connection = "test+" + transport+"://" + address + ":" + port + "/default";
+        }
+        else if (hypervisor.equals("xen"))
+        {
+        	connection = "xen+" + transport+"://" + address + ":" + port + "/";
+        }
+        else
+        {	
+        	connection = hypervisor + "+" + transport + "://" + address + ":" + port + "/default";
+        }
+
         log_.debug("connection to" + connection);
         return connection;
     }
