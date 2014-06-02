@@ -84,7 +84,7 @@ public class LibvirtRepository implements ImageRepository
         }
         else
         {	
-        	connection = hypervisor + "+" + transport + "://" + address + ":" + port + "/default";
+        	connection = hypervisor + "+" + transport + "://" + address + ":" + port + "/system";
         }
 
         log_.debug("connection to" + connection);
